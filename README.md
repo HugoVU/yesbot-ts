@@ -1,3 +1,6 @@
+# You can find the coverage result in the coverage folder
+
+
 # YesBot - The famous bot that handles and serves Yes Theory Fam Discord server
 
 This repository contains the code powering a Discord bot called YesBot
