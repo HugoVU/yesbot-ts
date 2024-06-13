@@ -7,8 +7,11 @@ import { DiscordEvent } from "../../src/event-distribution/index.js";
 import { ensureGuildMemberOrNull } from "../../src/event-distribution/helper.js";
 import { Guild, GuildMember } from "discord.js";
 import { GuildMemberFlagsBitField } from "discord.js";
+import MockDiscord from "../mocks/index.js";
 
 describe("ensureGuildMemberOrNull", () => {
+  const mockDiscord = new MockDiscord;
+
   it("Returns null if member is null", () => {
     const member = null;
     const client = {} as any;
@@ -19,16 +22,7 @@ describe("ensureGuildMemberOrNull", () => {
 
   it("Returns the member if it is a GuildMember", () => {
     // Return a member with null values for all properties, as it expects a GuildMember with all properties set to null
-    const member = {
-      avatar: null,
-      communicationDisabledUntilTimestamp: null,
-      guild: {},
-      joinedTimestamp: null,
-      nickname: null,
-      pending: null,
-      premiumSinceTimestamp: null,
-      flags: new GuildMemberFlagsBitField(0),
-    } as unknown as GuildMember;
+    const member = mockDiscord.getGuildMember();
     const client = {} as any;
     const guild = {} as any;
   
