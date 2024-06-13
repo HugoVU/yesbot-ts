@@ -21,7 +21,6 @@ describe("ensureGuildMemberOrNull", () => {
   });
 
   it("Returns the member if it is a GuildMember", () => {
-    // Return a member with null values for all properties, as it expects a GuildMember with all properties set to null
     const member = mockDiscord.getGuildMember();
     const client = {} as any;
     const guild = {} as any;
@@ -53,7 +52,6 @@ describe("ensureGuildMemberOrNull", () => {
     const client = {} as any;
     const guild = {} as Guild;
     const guildMember = Reflect.construct(GuildMember, [client, member, guild]) as GuildMember;
-    
     
     expect(ensureGuildMemberOrNull(member, client, guild)).toEqual(guildMember);
   });
