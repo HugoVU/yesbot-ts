@@ -14,7 +14,7 @@ import {
 } from "../event-distribution/index.js";
 
 // Resolves emojis (unicode and discord) at the start of a line
-const getEmojis = (lines: string[], bot: Client): string[] => {
+export const getEmojis = (lines: string[], bot: Client): string[] => {
   const isAvailableDiscordEmoji = (id: string) => bot.emojis.cache.has(id);
   const discordEmojiRegex = /^<:.*?:(.*?)>/;
 
@@ -38,7 +38,7 @@ const getEmojis = (lines: string[], bot: Client): string[] => {
   });
 };
 
-const letterToEmoji = (letter: string) => {
+export const letterToEmoji = (letter: string) => {
   const unicodeOffset = 0x1f1e6; //Regional Indicator A
   const asciiOffset = "A".charCodeAt(0);
 
@@ -49,14 +49,14 @@ const letterToEmoji = (letter: string) => {
 };
 
 // Resolves single letters at the start of a line and returns their unicode version
-const getLetterEmojis = (lines: string[]): string[] => {
+export const getLetterEmojis = (lines: string[]): string[] => {
   return lines
     .map((line) => line.toUpperCase().split(/\b/)[0])
     .filter((firstWord) => firstWord.match(/^[A-Z]$/))
     .map(letterToEmoji);
 };
 
-const resolveEmojis = (lines: string[], bot: Client): EmojiResolvable[] => {
+export const resolveEmojis = (lines: string[], bot: Client): EmojiResolvable[] => {
   const emojiEmojis = getEmojis(lines, bot);
 
   if (emojiEmojis && emojiEmojis.length > 0) {
