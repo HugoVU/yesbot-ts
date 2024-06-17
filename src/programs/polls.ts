@@ -13,6 +13,8 @@ import {
   DiscordEvent,
 } from "../event-distribution/index.js";
 
+export const resolveEmojisCoverage = [0, 0, 0];
+
 // Resolves emojis (unicode and discord) at the start of a line
 export const getEmojis = (lines: string[], bot: Client): string[] => {
   const isAvailableDiscordEmoji = (id: string) => bot.emojis.cache.has(id);
@@ -60,14 +62,17 @@ export const resolveEmojis = (lines: string[], bot: Client): EmojiResolvable[] =
   const emojiEmojis = getEmojis(lines, bot);
 
   if (emojiEmojis && emojiEmojis.length > 0) {
+    resolveEmojisCoverage[0] = 1;
     return emojiEmojis;
   }
 
   const letterEmojis = getLetterEmojis(lines);
   if (letterEmojis && letterEmojis.length > 0) {
+    resolveEmojisCoverage[1] = 1;
     return letterEmojis;
   }
 
+  resolveEmojisCoverage[2] = 1;
   return ["A", "B"].map(letterToEmoji);
 };
 

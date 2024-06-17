@@ -4,13 +4,17 @@ import {
   StringIndexedHIOCTree,
 } from "../../src/event-distribution/types/hioc.js";
 import { DiscordEvent } from "../../src/event-distribution/index.js";
-import { ensureGuildMemberOrNull } from "../../src/event-distribution/helper.js";
-import { Guild, GuildMember } from "discord.js";
-import { GuildMemberFlagsBitField } from "discord.js";
+import { ensureGuildMemberOrNull, ensureGuildMemberOrNullCoverage } from "../../src/event-distribution/helper.js";
+import { Guild, GuildMember, GuildMemberFlagsBitField } from "discord.js";
 import MockDiscord from "../mocks/index.js";
 
 describe("ensureGuildMemberOrNull", () => {
   const mockDiscord = new MockDiscord;
+
+  afterEach(() => {
+    const ensureGuildMemberOrNullCoverageSum = ensureGuildMemberOrNullCoverage.reduce((sum, x) => sum + x);
+    console.log("Branch coverage on ensureGuildMemberOrNull after test run: " + ((ensureGuildMemberOrNullCoverageSum / (ensureGuildMemberOrNullCoverage.length) * 100).toPrecision(3) + "%"));
+  });
 
   it("Returns null if member is null", () => {
     const member = null;
