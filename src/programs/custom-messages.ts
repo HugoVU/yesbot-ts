@@ -12,7 +12,7 @@ export const customMessageMethodsCoverage = [0,0,0,0]
   description:
     "This handler is for custom messages that do not have a specific trigger.",
 })
-class CustomMessageMethods implements CommandHandler<DiscordEvent.MESSAGE> {
+export class CustomMessageMethods implements CommandHandler<DiscordEvent.MESSAGE> {
   async handle(message: Message): Promise<void> {
     const messageContent = message.content;
 
@@ -42,7 +42,7 @@ class CustomMessageMethods implements CommandHandler<DiscordEvent.MESSAGE> {
   }
 }
 
-const randomReply = async (message: Message) => {
+export const randomReply = async (message: Message) => {
   const replies = [
     "yes.",
     "no",
@@ -77,7 +77,7 @@ const randomReply = async (message: Message) => {
   await message.reply(`${replies[Math.floor(Math.random() * replies.length)]}`);
 };
 
-const sendLove = async (message: Message) => {
+export const sendLove = async (message: Message) => {
   const loveArr = [
     "I love you too, Cutiepie",
     "I will find you and I will love you.",
