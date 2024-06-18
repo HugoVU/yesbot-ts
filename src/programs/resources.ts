@@ -39,7 +39,7 @@ export class Resources implements CommandHandler<DiscordEvent.SLASH_COMMAND> {
   }
 }
 
-const RESOURCES_CODING = `
+export const RESOURCES_CODING = `
 
 Our own lovely Michel has written a guide tailored for this group that in his own words "gives you a good guess of what awaits you". You can find that here: https://gist.github.com/geisterfurz007/473abe140d3504bc018255597201431e
 
@@ -51,7 +51,7 @@ Our group suggest Javascript as the first language whose rabbit hole you can fal
              - Javascript reference/docs: <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference>
 `;
 
-const RESOURCES_SPANISH = `__**Useful resources for #learning-spanish:**__
+export const RESOURCES_SPANISH = `__**Useful resources for #learning-spanish:**__
 
 __**Whatsapp group chat for learning/speaking Spanish**__
 <https://chat.whatsapp.com/IYZiHoqqwR67siK4zBm6ba>
