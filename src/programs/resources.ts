@@ -6,22 +6,26 @@ import {
   DiscordEvent,
 } from "../event-distribution/index.js";
 
+export const resourcesCoverage = [0,0,0];
+
 @Command({
   event: DiscordEvent.SLASH_COMMAND,
   root: "resources",
   description: "Get the resources associated with the channel.",
 })
-class Resources implements CommandHandler<DiscordEvent.SLASH_COMMAND> {
+export class Resources implements CommandHandler<DiscordEvent.SLASH_COMMAND> {
   async handle(interaction: ChatInputCommandInteraction): Promise<void> {
     const channel = interaction.channel as TextChannel;
 
     switch (channel.name) {
       case ChatNames.CODING:
         await interaction.reply(RESOURCES_CODING);
+        resourcesCoverage[0] = 1;
         break;
 
       case ChatNames.LEARNING_SPANISH:
         await interaction.reply(RESOURCES_SPANISH);
+        resourcesCoverage[1] = 1;
         break;
 
       default:
@@ -29,6 +33,7 @@ class Resources implements CommandHandler<DiscordEvent.SLASH_COMMAND> {
           content: "No resource exists for this channel.",
           ephemeral: true,
         });
+        resourcesCoverage[2] = 1;
         break;
     }
   }

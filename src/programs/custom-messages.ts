@@ -5,6 +5,8 @@ import {
   DiscordEvent,
 } from "../event-distribution/index.js";
 
+export const customMessageMethodsCoverage = [0,0,0,0]
+
 @Command({
   event: DiscordEvent.MESSAGE,
   description:
@@ -14,7 +16,10 @@ class CustomMessageMethods implements CommandHandler<DiscordEvent.MESSAGE> {
   async handle(message: Message): Promise<void> {
     const messageContent = message.content;
 
-    if (messageContent.match(/^(yesbot).*(\?)$/gi)) await randomReply(message);
+    if (messageContent.match(/^(yesbot).*(\?)$/gi)){
+      await randomReply(message);
+      customMessageMethodsCoverage[0] = 1;
+    }
 
     if (
       messageContent.match(
@@ -22,11 +27,18 @@ class CustomMessageMethods implements CommandHandler<DiscordEvent.MESSAGE> {
       )
     ) {
       await sendLove(message);
+      customMessageMethodsCoverage[1] = 1;
     }
 
-    if (messageContent.match(/^F$/i)) await message.react("🇫");
+    if (messageContent.match(/^F$/i)){
+      await message.react("🇫");
+      customMessageMethodsCoverage[2] = 1;
+    }
 
-    if (messageContent.match(/(abooz|mod abuse)/i)) await message.react("👀");
+    if (messageContent.match(/(abooz|mod abuse)/i)){
+      await message.react("👀");
+      customMessageMethodsCoverage[3] = 1;
+    }
   }
 }
 
