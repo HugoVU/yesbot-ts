@@ -139,9 +139,11 @@ The branch coverage improved from 50% to 100% for this given function. This was 
 The tests for this function are in event.spec.ts. The GitHub diffs can be found: https://github.com/HugoVU/yesbot-ts/commit/de27e78321457ba566b8d70c90e576f0e6a549be
 
 The original branch coverage can be seen here:
+
 ![image](https://github.com/HugoVU/yesbot-ts/assets/121669034/68ac2ad2-a6cd-4944-9f5b-b5596ad8ac63)
 
 The improved branch coverage can be seen here:
+
 ![image](https://github.com/HugoVU/yesbot-ts/assets/121669034/e8ade227-4bce-4aa0-b831-5855b9d93539)
 
 In total the branch coverage of this function increased from 50% to 100%. This was done by testing cases that were previously left untested. What was convenient is that these cases were the same as the previous function.
