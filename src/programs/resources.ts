@@ -6,22 +6,26 @@ import {
   DiscordEvent,
 } from "../event-distribution/index.js";
 
+export const resourcesCoverage = [0,0,0];
+
 @Command({
   event: DiscordEvent.SLASH_COMMAND,
   root: "resources",
   description: "Get the resources associated with the channel.",
 })
-class Resources implements CommandHandler<DiscordEvent.SLASH_COMMAND> {
+export class Resources implements CommandHandler<DiscordEvent.SLASH_COMMAND> {
   async handle(interaction: ChatInputCommandInteraction): Promise<void> {
     const channel = interaction.channel as TextChannel;
 
     switch (channel.name) {
       case ChatNames.CODING:
         await interaction.reply(RESOURCES_CODING);
+        resourcesCoverage[0] = 1;
         break;
 
       case ChatNames.LEARNING_SPANISH:
         await interaction.reply(RESOURCES_SPANISH);
+        resourcesCoverage[1] = 1;
         break;
 
       default:
@@ -29,12 +33,13 @@ class Resources implements CommandHandler<DiscordEvent.SLASH_COMMAND> {
           content: "No resource exists for this channel.",
           ephemeral: true,
         });
+        resourcesCoverage[2] = 1;
         break;
     }
   }
 }
 
-const RESOURCES_CODING = `
+export const RESOURCES_CODING = `
 
 Our own lovely Michel has written a guide tailored for this group that in his own words "gives you a good guess of what awaits you". You can find that here: https://gist.github.com/geisterfurz007/473abe140d3504bc018255597201431e
 
@@ -46,7 +51,7 @@ Our group suggest Javascript as the first language whose rabbit hole you can fal
              - Javascript reference/docs: <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference>
 `;
 
-const RESOURCES_SPANISH = `__**Useful resources for #learning-spanish:**__
+export const RESOURCES_SPANISH = `__**Useful resources for #learning-spanish:**__
 
 __**Whatsapp group chat for learning/speaking Spanish**__
 <https://chat.whatsapp.com/IYZiHoqqwR67siK4zBm6ba>

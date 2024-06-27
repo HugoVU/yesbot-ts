@@ -5,16 +5,21 @@ import {
   DiscordEvent,
 } from "../event-distribution/index.js";
 
+export const customMessageMethodsCoverage = [0,0,0,0]
+
 @Command({
   event: DiscordEvent.MESSAGE,
   description:
     "This handler is for custom messages that do not have a specific trigger.",
 })
-class CustomMessageMethods implements CommandHandler<DiscordEvent.MESSAGE> {
+export class CustomMessageMethods implements CommandHandler<DiscordEvent.MESSAGE> {
   async handle(message: Message): Promise<void> {
     const messageContent = message.content;
 
-    if (messageContent.match(/^(yesbot).*(\?)$/gi)) await randomReply(message);
+    if (messageContent.match(/^(yesbot).*(\?)$/gi)){
+      await randomReply(message);
+      customMessageMethodsCoverage[0] = 1;
+    }
 
     if (
       messageContent.match(
@@ -22,15 +27,22 @@ class CustomMessageMethods implements CommandHandler<DiscordEvent.MESSAGE> {
       )
     ) {
       await sendLove(message);
+      customMessageMethodsCoverage[1] = 1;
     }
 
-    if (messageContent.match(/^F$/i)) await message.react("🇫");
+    if (messageContent.match(/^F$/i)){
+      await message.react("🇫");
+      customMessageMethodsCoverage[2] = 1;
+    }
 
-    if (messageContent.match(/(abooz|mod abuse)/i)) await message.react("👀");
+    if (messageContent.match(/(abooz|mod abuse)/i)){
+      await message.react("👀");
+      customMessageMethodsCoverage[3] = 1;
+    }
   }
 }
 
-const randomReply = async (message: Message) => {
+export const randomReply = async (message: Message) => {
   const replies = [
     "yes.",
     "no",
@@ -65,7 +77,7 @@ const randomReply = async (message: Message) => {
   await message.reply(`${replies[Math.floor(Math.random() * replies.length)]}`);
 };
 
-const sendLove = async (message: Message) => {
+export const sendLove = async (message: Message) => {
   const loveArr = [
     "I love you too, Cutiepie",
     "I will find you and I will love you.",
