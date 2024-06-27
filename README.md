@@ -217,5 +217,5 @@ Visualized:
 
 
 ## Statement of individual contributions
-The work was evenly distributed throughout the assignment. Each member worked on their own branch on 2 specific functions. Each member reviewed each others work, and only after approval a merge was accepted.
+The work was evenly distributed throughout the assignment. Each member worked on their own branch on 2 specific functions. Each member reviewed each others work, and only after approval a merge was accepted. Everyone documented their changes and helped in creating the README.
 
