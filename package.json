@@ -18,7 +18,7 @@
     "start": "env-cmd ts-node-dev --files --respawn src/index.ts",
     "start:prod": "node build/src/index.js",
     "start:prodOld": "env-cmd ts-node src/index.ts",
-    "test": "vitest",
+    "test": "vitest --coverage",
     "tsc": "tsc"
   },
   "author": "",
@@ -55,6 +55,7 @@
     "@types/node": "20.14.2",
     "@types/node-cron": "3.0.11",
     "@types/ws": "8.5.10",
+    "@vitest/coverage-v8": "^1.6.0",
     "@yestheoryfam/prettier-config": "1.0.0",
     "env-cmd": "10.1.0",
     "prettier": "3.3.1",

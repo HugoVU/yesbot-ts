@@ -24,6 +24,8 @@ import { EventHandlerOptions } from "./events/events.js";
 
 export const getIdFromParentName = (name: string) => `c_${name.toLowerCase()}`;
 
+export const ensureGuildMemberOrNullCoverage = [0, 0, 0, 0];
+
 export const getIocName = <T extends DiscordEvent>(
   ioc: InstanceOrConstructor<CommandHandler<T>>
 ) => {
@@ -109,18 +111,24 @@ export const ensureGuildMemberOrNull = (
   client: Client,
   guild: Guild | null
 ): GuildMember | null => {
-  if (!member) return null;
+  if (!member) {
+    ensureGuildMemberOrNullCoverage[0] = 1;
+    return null;
+  }
 
   if (member instanceof GuildMember) {
+    ensureGuildMemberOrNullCoverage[1] = 1;
     return member;
   }
 
   if (!guild) {
+    ensureGuildMemberOrNullCoverage[2] = 1;
     throw new Error(
       "Could not instantiate GuildMember from raw data; missing guild from button interaction"
     );
   }
 
+  ensureGuildMemberOrNullCoverage[3] = 1;
   return Reflect.construct(GuildMember, [client, member, guild]) as GuildMember;
 };
 
