@@ -113,6 +113,7 @@ As you can see, resolveEmojis, getLetterEmojis, and letterToEmoji are all covere
 
 #### Mark
 **addEventHandler**
+
 The tests for this function are placed in events.spec.ts
 
 Github diffs for this function can be found here:
@@ -125,8 +126,75 @@ The original branch coverage can be seen here:
 
 ![image](https://github.com/HugoVU/yesbot-ts/assets/121669034/59956f4e-b0de-4103-9e6e-9b8cb31e4265)
 
+The improved branch coverage can be seen here:
+![image](https://github.com/HugoVU/yesbot-ts/assets/121669034/18624dfc-7d6c-4a81-ad11-ed4049af20b3)
 
+The branch coverage improved from 50% to 100% for this given function. This was done by adding test cases that reach the switch case statements that were previously left untested.
 
+**extractEventInfo**
+The tests for this function are in event.spec.ts. The GitHub diffs can be found: https://github.com/HugoVU/yesbot-ts/commit/de27e78321457ba566b8d70c90e576f0e6a549be
+
+The original branch coverage can be seen here:
+![image](https://github.com/HugoVU/yesbot-ts/assets/121669034/68ac2ad2-a6cd-4944-9f5b-b5596ad8ac63)
+
+The improved branch coverage can be seen here:
+![image](https://github.com/HugoVU/yesbot-ts/assets/121669034/e8ade227-4bce-4aa0-b831-5855b9d93539)
+
+In total the branch coverage of this function increased from 50% to 100%. This was done by testing cases that were previously left untested. What was convenient is that these cases were the same as the previous function.
+
+#### Tomas
+**MetaCommand**
+
+The commit containing the updated code can be found in the following commit: https://github.com/Yes-Theory-Fam/yesbot-ts/commit/c33ed45c14ea337336597cb10a75c7cbace3506d
+
+The commit also contains the code (meta.spec.ts) of the actual tests performed on the function. The tests improved the coverage of the function from 0% to ~90% as seen in the Vitest output bellow:
+
+Before adding tests:
+![image](https://github.com/HugoVU/yesbot-ts/assets/121669034/28fcf3fb-8c48-495d-bf2d-c292c8c697d5)
+
+After adding tests:
+![image](https://github.com/HugoVU/yesbot-ts/assets/121669034/945f463c-fd3a-4d1e-a7d2-86cf619c01c3)
+
+The branch coverage improved significantly because major branches of the code’s logic (namely - error handling ifs) were covered by the added tests.
+
+**FeatureRequestPending**
+The commit containing the updated code can be found in the following commit: https://github.com/Yes-Theory-Fam/yesbot-ts/commit/b79380c067e156aa6442d21ac1a6f9c0ffcf8fda
+
+The commit also contains the code (feature-request-pending.spec.ts) of the actual tests performed on the function.
+The tests improved the coverage of the function from 0% to ~85% as seen in the vitest output bellow:
+
+Before adding tests:
+![image](https://github.com/HugoVU/yesbot-ts/assets/121669034/2e2ee929-60bb-4a5e-8df8-d6166b2b3f92)
+
+After adding tests:
+![image](https://github.com/HugoVU/yesbot-ts/assets/121669034/2df9704d-5340-4e81-a3d1-52f47814c0f6)
+
+The branch coverage improved significantly because major branches of the code’s logic (namely - early returns from the function) were covered by the added tests.
+
+#### Sebastian
+**Resources**
+New tests can be found here:
+https://github.com/HugoVU/yesbot-ts/commit/d4bc4fbea557c11fc0907620f348a33a68858d5d
+
+Old Test results:
+![image](https://github.com/HugoVU/yesbot-ts/assets/121669034/17590319-f611-4426-a18c-981dd83eee7b)
+
+New Test results:
+![image](https://github.com/HugoVU/yesbot-ts/assets/121669034/699c0fef-83ef-4072-b17e-568f1e8a0c2a)
+
+Coverage was improved because I added tests tested all branches and covered all lines of the function
+
+**custom-messages**
+New tests can be found here:
+https://github.com/HugoVU/yesbot-ts/commit/de406af6ce3957330a1709e7d14c5c76c6a16600
+
+Old test results;
+![image](https://github.com/HugoVU/yesbot-ts/assets/121669034/94d604e2-83e3-488a-bde9-bb9605c34d47)
+
+New test results:
+![image](https://github.com/HugoVU/yesbot-ts/assets/121669034/3fee9d5e-443c-44c5-bd86-47579021418f)
+
+Coverage was improved because I added tests tested all branches and covered all lines of the function.
 
 ### Overall
 As previously mentioned the entire project had an initial branch coverage of 39.22%, and 12.75% of the functions. Lastly, a 22.92% statement coverage:
