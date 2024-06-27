@@ -72,6 +72,7 @@ Since there were no unit tests in the first place, a branch coverage of 0% was m
 ![image](https://github.com/HugoVU/yesbot-ts/assets/121669034/7fd7a665-7be9-415a-9b1c-dbdd994d5d75)
 
 **custom-message**
+
 Again, since there were no unit tests in the first place, a branch coverage of 0% was measured:
 ![image](https://github.com/HugoVU/yesbot-ts/assets/121669034/315d3b00-81c2-40be-a5a6-993d6660bda6)
 
