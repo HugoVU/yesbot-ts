@@ -1,5 +1,3 @@
-# A PDF file of this report can be found on the Repo, which is much easier to read.
-
 # Report for Assignment 1
 
 ## Project chosen
@@ -82,6 +80,7 @@ Again, since there were no unit tests in the first place, a branch coverage of 0
 
 #### Hugo 
 **ensureGuildMemberOrNull**
+
 I added my test in helper.spec.ts. The code can be found here:
 https://github.com/HugoVU/yesbot-ts/commit/024355bbfe8c517b56eb188cc54d8b2778ab9b86
 
@@ -97,6 +96,7 @@ And as a result we now cover 5 out of 8 functions with a branch coverage of 81,8
 Since there was no unit test for this function at all, the coverage has been significantly improved. A branch coverage of 81.81% has been achieved for the entire file, which is a solid improvement over the previous 75%.
 
 **resolveEmojis**
+
 I added my unit tests in a new folder called programs. The code can be found here:
 https://github.com/HugoVU/yesbot-ts/commit/9a2d3bff7d690fa627d849ff6e157d6dec114bde
 
@@ -111,29 +111,36 @@ After my implementations we have 87.5% branch coverage of the entire file and 44
 
 As you can see, resolveEmojis, getLetterEmojis, and letterToEmoji are all covered now by unit tests. Considering we had 0% coverage of the entire file, adding these tests ensured a higher branch coverage.
 
+#### Mark
+**addEventHandler**
+The tests for this function are placed in events.spec.ts
+
+Github diffs for this function can be found here:
+https://github.com/HugoVU/yesbot-ts/commit/6b9fca252a01e06c012ce92e6b33967bdfbc591f
+https://github.com/HugoVU/yesbot-ts/commit/e28642319a62362b62d5b2de1a2fc7a3473ba055
+https://github.com/HugoVU/yesbot-ts/commit/de27e78321457ba566b8d70c90e576f0e6a549be
+
+The original branch coverage can be seen here:
+![image](https://github.com/HugoVU/yesbot-ts/assets/121669034/8f0349a3-2e91-477d-9180-3c0b576008be)
+
+![image](https://github.com/HugoVU/yesbot-ts/assets/121669034/59956f4e-b0de-4103-9e6e-9b8cb31e4265)
 
 
 
-<Test 1>
-
-<Show a patch (diff) or a link to a commit made in your forked repository that shows the new/enhanced test>
-
-<Provide a screenshot of the old coverage results (the same as you already showed above)>
-
-<Provide a screenshot of the new coverage results>
-
-<State the coverage improvement with a number and elaborate on why the coverage is improved>
-
-<Test 2>
-
-<Provide the same kind of information provided for Test 1>
 
 ### Overall
+As previously mentioned the entire project had an initial branch coverage of 39.22%, and 12.75% of the functions. Lastly, a 22.92% statement coverage:
+![image](https://github.com/HugoVU/yesbot-ts/assets/121669034/668133d0-e241-446f-9fab-9ed2d865fd84)
 
-<Provide a screenshot of the old coverage results by running an existing tool (the same as you already showed above)>
+After merging everything together we get:
+![image](https://github.com/HugoVU/yesbot-ts/assets/121669034/6aec24a9-7eb6-438e-8095-d51c3476968b)
 
-<Provide a screenshot of the new coverage results by running the existing tool using all test modifications made by the group>
+This concludes 588 extra statements covered resulting in a 3.77% improvement in statement coverage,  88 branches extra resulting in a 15.75% boost in branch coverage and lastly 22 extra functions covered resulting in an 8.19% increase in function coverage.
+Visualized:
+![image](https://github.com/HugoVU/yesbot-ts/assets/121669034/3208787a-072e-4be7-b24f-7bc3e8577ee3)
+
+
 
 ## Statement of individual contributions
+The work was evenly distributed throughout the assignment. Each member worked on their own branch on 2 specific functions. Each member reviewed each others work, and only after approval a merge was accepted.
 
-<Write what each group member did>
