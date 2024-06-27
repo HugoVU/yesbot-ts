@@ -118,7 +118,9 @@ The tests for this function are placed in events.spec.ts
 
 Github diffs for this function can be found here:
 https://github.com/HugoVU/yesbot-ts/commit/6b9fca252a01e06c012ce92e6b33967bdfbc591f
+
 https://github.com/HugoVU/yesbot-ts/commit/e28642319a62362b62d5b2de1a2fc7a3473ba055
+
 https://github.com/HugoVU/yesbot-ts/commit/de27e78321457ba566b8d70c90e576f0e6a549be
 
 The original branch coverage can be seen here:
