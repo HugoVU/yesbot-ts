@@ -1,4 +1,5 @@
 # Report for Assignment 1
+We uploaded this report in a PDF for better readability. You can check that out
 
 ## Project chosen
 
