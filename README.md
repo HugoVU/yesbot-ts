@@ -27,7 +27,7 @@ Hugo
 #### ensureGuildMemberOrNull
 
 Found in src/event-distribution/helper.ts
-The commit can be found here: https://github.com/HugoVU/yesbot-ts/commit/683a2733362a3a5aea08ebbf51e98be1736512ba
+The commit can be found here: https://github.com/HugoVU/yesbot-ts/commit/683a2733362a3a5aea08ebbf51e98be1736512ba \n
 This function had no unit tests at all, so we got a branch coverage of 0% for this particular function:
 ![image](https://github.com/HugoVU/yesbot-ts/assets/121669034/9b665713-3b82-4328-bea0-35f2269b8502)
 
