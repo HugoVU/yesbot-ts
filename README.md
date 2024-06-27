@@ -130,6 +130,7 @@ The original branch coverage can be seen here:
 
 
 The improved branch coverage can be seen here:
+
 ![image](https://github.com/HugoVU/yesbot-ts/assets/121669034/18624dfc-7d6c-4a81-ad11-ed4049af20b3)
 
 The branch coverage improved from 50% to 100% for this given function. This was done by adding test cases that reach the switch case statements that were previously left untested.
