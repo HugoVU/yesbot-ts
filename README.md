@@ -128,6 +128,7 @@ The original branch coverage can be seen here:
 
 ![image](https://github.com/HugoVU/yesbot-ts/assets/121669034/59956f4e-b0de-4103-9e6e-9b8cb31e4265)
 
+
 The improved branch coverage can be seen here:
 ![image](https://github.com/HugoVU/yesbot-ts/assets/121669034/18624dfc-7d6c-4a81-ad11-ed4049af20b3)
 
