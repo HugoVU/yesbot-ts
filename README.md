@@ -164,6 +164,7 @@ After adding tests:
 The branch coverage improved significantly because major branches of the code’s logic (namely - error handling ifs) were covered by the added tests.
 
 **FeatureRequestPending**
+
 The commit containing the updated code can be found in the following commit: https://github.com/Yes-Theory-Fam/yesbot-ts/commit/b79380c067e156aa6442d21ac1a6f9c0ffcf8fda
 
 The commit also contains the code (feature-request-pending.spec.ts) of the actual tests performed on the function.
